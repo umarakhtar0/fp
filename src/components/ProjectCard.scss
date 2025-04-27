@@ -1,0 +1,252 @@
+.card {
+  width: 100%;
+  max-width: 420px;
+  height: 320px;
+  perspective: 1000px;
+  margin: 1rem;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%; 
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-front {
+  background: linear-gradient(-45deg, #1f4068, #2b5876, #1f4068);
+  background-size: 600% 600%;
+  animation: gradientMove 8s ease infinite;
+
+  color: #fff;
+  padding: 1rem;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+// .card-back {
+//   background-color: #F08A5D;
+//   transform: rotateY(180deg);
+
+//   img {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//   }
+// }
+.card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); // Dark dev vibe gradient
+  background-size: 200% 200%;
+  animation: gradientFlow 6s ease infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 1rem;
+  color: #fff; // White text for contrast
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+
+  a.button {
+    margin-top: auto;
+  }
+}
+
+@keyframes gradientFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}.btn-project {
+  // Make the button a block-level element to handle spacing
+  display: inline-block;
+
+  // Increase padding for height & width feel
+  padding: 0.4rem 1rem;
+
+  // Uppercase for button text
+  text-transform: uppercase;
+
+  // Clean white text for visibility on dark backgrounds
+  color: #ffffff;
+
+  // Transparent background (outlined style)
+  background: linear-gradient(-45deg, #2d2d2d, #343535, #161616);
+
+  // Subtle dark border (can match your card borders)
+  border: 2px solid hsl(207, 91%, 45%);
+
+  // Slightly rounded corners for a modern look
+  border-radius: 8px;
+
+  // Position the button at the bottom center of the card
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  // Center the text and apply a nice clean font
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+
+  // Smooth transition effect for hover state
+  transition: all 0.3s ease;
+
+  // Soft blue glow shadow for modern dev touch
+  box-shadow: 0 0 12px #0b94e4;
+
+  // Remove underline in case <a> is used
+  text-decoration: none;
+}
+
+.btn-project:hover {
+  // Optional: Keep background transparent or change to glow-style color
+  // background: #0b94e4;
+
+  // Maintain white text on hover
+  color: #ffffff;
+
+  // Brighter shadow effect to simulate glow on hover
+  box-shadow: 0 0 25px rgba(11, 148, 228, 0.6);
+
+  // Slight zoom effect on hover
+  transform: translateX(-50%) scale(1.08);
+}
+//
+// ProjectCard.scss
+
+
+
+
+// Styling for the languages section - moved to the bottom of the card
+.languages-list {
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+  //font-style: italic;
+  transition: color 0.3s ease, transform 0.3s ease;
+
+  /* New position to move it at the bottom of the card */
+  position: absolute;
+  bottom: 1rem; /* Adjust as needed for spacing */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%; /* Ensures it takes up full width for proper centering */
+  padding: 0 1rem; /* Adjust padding for spacing */
+  z-index: 1; /* Ensure it's above other content if needed */
+}
+
+/* Styling for the individual language tags - looking like buttons */
+.languages-list span {
+  display: inline-block;
+  margin: 0.3rem 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #0b94e4;
+  color: #fff;
+  border-radius: 25px; /* More rounded corners for button look */
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  
+  /* Optional: Adding a smooth scaling effect on hover */
+  &:hover {
+    background-color: #005f8e;
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Card hover effect */
+.card-front:hover .languages-list {
+  color: #333; /* Change text color on card hover */
+}
+
+.card-front:hover .languages-list span {
+  background-color: #1e7eb3; /* Change background color on hover */
+  transform: translateY(0px); /* Reset translation on hover */
+}
+
+@media (max-width: 768px) {
+  .languages-list {
+    font-size: 0.9rem;
+    max-width: 95%;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .languages-list {
+    font-size: 0.8rem;
+    text-align: left;
+    max-width: 90%;
+  }
+
+  .languages-list span {
+    margin: 0.2rem 0.4rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+
+
+
+//
+h3 {
+  //font-size: 3rem;
+  text-align: center;
+  font-weight: 700;
+  background: linear-gradient(90deg, #007cf0, #00dfd8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 2rem 0;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #00dfd8;
+    margin: 1rem auto 0;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 120px;
+  }
+}

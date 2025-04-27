@@ -1,0 +1,546 @@
+// Variables
+$primary-color: #3a86ff;
+$secondary-color: #8338ec;
+$text-color: #333;
+$text-color-dark: #f8f9fa;
+$bg-color: #dcdee1e2;
+$bg-color-dark: #000000d3;
+$transition-speed: 0.3s;
+$easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$box-shadow-dark: 0 4px 6px rgba(50, 50, 50, 0.3);
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+//
+
+body {
+  background-color: $bg-color;
+  color: $text-color;
+  transition: background-color $transition-speed $easing, color $transition-speed $easing;
+
+  &.dark-mode {
+    background-color: $bg-color-dark;
+    color: $text-color-dark;
+  }
+}
+
+
+@mixin hover-effect {
+  transition: all $transition-speed $easing;
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@mixin underline-animation {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: linear-gradient(90deg, $primary-color, $secondary-color);
+    transition: width $transition-speed $easing;
+  }
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+// // Header styles
+// .header {
+//   animation: fadeInUp 0.7s ease-out;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   padding: 1.5rem 2rem;
+//   z-index: 1000;
+//   transition: all 0.4s $easing;
+//   background-color: transparent;
+//   align-items: center;
+//   justify-content: space-between;
+//   padding: 1.5rem 2rem; // Always maintain this padding for consistency
+
+  
+//   &.scrolled {
+//     // background-color: rgba($bg-color, 0.95);
+//     // box-shadow: $box-shadow;
+//     // padding: 1rem 2rem;
+   
+//       background-color: rgba($bg-color, 0.95);
+//       box-shadow: $box-shadow;
+    
+    
+//     .dark-mode & {
+//       background-color: rgba($bg-color-dark, 0.95);
+//       box-shadow: $box-shadow-dark;
+//     }
+//   }
+
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  z-index: 1000;
+  background-color: rgba($bg-color, 0.50); // Set a solid semi-transparent background
+  transition: all 0.4s $easing;
+  align-items: center;
+  justify-content: space-between;
+
+  &.scrolled {
+    background-color: rgba($bg-color, 0.9); // Slightly more opaque when scrolled
+    box-shadow: $box-shadow;
+    padding: 1rem 2rem;
+  }
+
+  .dark-mode & {
+    background-color: rgba($bg-color-dark, 0.1);
+    box-shadow: $box-shadow-dark;
+  }
+}
+
+ 
+
+.github-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  background: linear-gradient(135deg, #eaeaea, #ffffff);
+  color: #000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.github-icon::before {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: rgba(0, 0, 0, 0.05);
+  top: 100%;
+  left: -10%;
+  transform: rotate(45deg);
+  transition: 0.6s ease-in-out;
+}
+
+.github-icon:hover::before {
+  top: -20%;
+}
+
+.github-icon:hover {
+  transform: scale(1.15) rotate(4deg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Logo styles
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: $text-color;
+  z-index: 1001;
+  @include hover-effect;
+  font-family:Verdana;
+  
+  .dark-mode & {
+    color: $text-color-dark;
+  }
+}
+
+.logo-text {
+  margin-right: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+
+// Desktop Navigation
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.nav-link {
+  text-decoration: none;
+  color: $text-color;
+  font-weight: 500;
+  position: relative;
+  @include underline-animation;
+  
+  .dark-mode & {
+    color: $text-color-dark;
+  }
+  
+  .nav-text {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// Theme toggle and GitHub icon
+.theme-toggle, .github-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $text-color;
+  font-size: 1.25rem;
+  @include hover-effect;
+ 
+  
+  .dark-mode & {
+    color: $text-color-dark;
+  }
+}
+
+// .github-icon {
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+
+
+
+.theme-icon {
+//transition: transform 0.3s $easing, color 0.3s $easing;
+  transition: transform 0.3s $easing, color 0.3s $easing;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &:hover {
+    transform: rotate(15deg) scale(1.1);
+    color: $primary-color;
+  }
+}
+
+.sun {
+  color: hsl(44, 100%, 50%);
+}
+
+.moon {
+  color: #000000;
+}
+
+// Mobile Menu Toggle
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+    animation: fadeInUp 0.5s ease-in-out;
+  
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 30px;
+    color: #000;
+  }
+  
+  .bar {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: $text-color;
+    transition: all 0.3s $easing;
+    
+    .dark-mode & {
+      background-color: $text-color-dark;
+    }
+    
+    &:nth-child(2) {
+      margin: 6px 0;
+    }
+  }
+
+
+
+
+
+
+
+
+}
+
+// Mobile Menu
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba($bg-color, 0.98);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s $easing;
+  animation: fadeInUp 0.5s ease-in-out;
+  
+  .dark-mode & {
+    background-color: rgba($bg-color-dark, 0.98);
+  }
+  
+  &.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  @media (min-width: 769px) {
+    display: none;
+  }
+}
+
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.mobile-link {
+  text-decoration: none;
+  color: $text-color;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: all $transition-speed $easing;
+  opacity: 0;
+  transform: translateY(20px);
+  
+  .dark-mode & {
+    color: $text-color-dark;
+  }
+  
+  .open & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.mobile-icons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all $transition-speed $easing;
+  
+  .open & {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.4s;
+  }
+}
+
+.mobile-github, .mobile-theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $text-color;
+  font-size: 1.5rem;
+  @include hover-effect;
+  
+  .dark-mode & {
+    color: $text-color-dark;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 480px) {
+  .header {
+    padding: 1rem;
+    
+    &.scrolled {
+      padding: 0.75rem 1rem;
+    }
+    
+  }
+  
+  .logo {
+    font-size: 1.25rem;
+  }
+  
+  .mobile-link {
+    font-size: 1.25rem;
+  }
+}
+
+// Dark mode styles
+.dark-mode {
+  .nav-link, .mobile-link {
+    color: $text-color-dark;
+  }
+  
+  .theme-toggle, .github-icon, .mobile-github, .mobile-theme-toggle {
+    color: $text-color-dark;
+  }
+}
+
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 30px;
+    color: #000;
+  }
+
+  // ✅ Merged and optimized menu bars
+  .menu-bars {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    cursor: pointer;
+
+    .bar {
+      height: 3px;
+      width: 100%;
+      background-color: $text-color;
+      transition: all 0.3s ease;
+
+      .dark-mode & {
+        background-color: $text-color-dark;
+      }
+    }
+  }
+
+  // ✅ Combined toggle animations
+  &.open {
+    .bar:nth-child(1) {
+      transform: translateY(7.5px) rotate(45deg);
+    }
+    .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .bar:nth-child(3) {
+      transform: translateY(-7.5px) rotate(-45deg);
+    }
+  }
+
+  .close-icon {
+    font-size: 2rem;
+    color: $text-color;
+    transition: all 0.3s ease;
+
+    .dark-mode & {
+      color: $text-color-dark;
+    }
+  }
+}
+//
+
+
+
+
+///animtion
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+
+//
+// Glow hover effect for links and buttons
+@mixin glow-hover {
+  position: relative;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: lighten($primary-color, 10%);
+    transform: translateY(-3px) scale(1.03);
+
+    &::after {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, $primary-color, $secondary-color);
+    transform: scaleX(0);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform-origin: left;
+  }
+}
+
+// Apply it to links
+.nav-link,
+.mobile-link {
+  @include glow-hover;
+}

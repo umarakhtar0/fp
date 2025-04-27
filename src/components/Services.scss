@@ -1,0 +1,102 @@
+.services-section {
+  padding: 50px 20px;
+  //background-color: #f4f4f4;
+  text-align: center;
+
+  .services-title {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #333;
+    span {
+    
+    font-size: 36px;
+  
+    color: #007bff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    }
+    animation: fadeInUp 1s ease-out;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Three cards in a row for larger screens
+    gap: 30px 50px; // Horizontal gap is larger (50px) for more spacious design
+    justify-items: center;
+    margin-top: 20px;
+
+    // Responsive layout for smaller screens
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr); // Two cards per row on tablets
+      gap: 30px 30px; // Smaller gap on tablets
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr; // One card per row on mobile
+      gap: 20px 20px; // Smaller gap on mobile devices
+    }
+  }
+
+  .service-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;  // Full width of the grid cell
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+
+    .icon {
+      font-size: 3rem;
+      color: #007bff;
+      margin-bottom: 20px;
+      transition: color 0.3s ease;
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #555;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .services-title {
+      font-size: 2rem;
+    }
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr); // Two cards per row on tablets
+    }
+  }
+
+  @media (max-width: 768px) {
+    .services-title {
+      font-size: 1.6rem;
+    }
+    .services-grid {
+      grid-template-columns: 1fr; // One card per row on mobile
+    }
+  }
+}
+
+// Animation keyframes for the fade-in effect
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

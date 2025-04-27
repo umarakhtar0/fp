@@ -1,0 +1,135 @@
+$primary-color: #0a5ad2;
+$transition-speed: 0.5s;
+$overlay-color: rgba(0, 0, 0, 0.6);
+
+.horizontal-gallery-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 1rem 0 2rem;
+}
+
+.horizontal-gallery {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 1rem 0;
+  cursor: grab;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.grabbing {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+}
+
+.gallery-item {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  margin: 0 10px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform $transition-speed ease, box-shadow $transition-speed ease;
+  width: 400px;
+  height: 400px;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  &.active {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform $transition-speed ease;
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $overlay-color;
+  color: white;
+  padding: 1rem;
+  transform: translateY(100%);
+  transition: transform $transition-speed ease;
+  text-align: center;
+
+  .gallery-item:hover &, .active & {
+    transform: translateY(0);
+  }
+}
+
+.image-title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+
+    &:hover {
+      background: #999;
+    }
+
+    &.active {
+      background: $primary-color;
+      transform: scale(1.2);
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .gallery-item {
+    width: 250px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-item {
+    width: 200px;
+    height: 140px;
+  }
+}
+
+// Animation classes
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn $transition-speed ease-in;
+}

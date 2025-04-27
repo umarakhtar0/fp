@@ -1,0 +1,28 @@
+
+// Projects.scss
+.projects-section {
+    padding: 3rem 2rem;
+    //background-color: #f0f0f0;
+    text-align: center;
+  
+    .section-title {
+
+    
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #007bff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    }
+  
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+
+
+  

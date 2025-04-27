@@ -1,0 +1,161 @@
+
+
+
+///
+/// 
+/// 
+.about-section {
+  padding: 5rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  
+  &.light {
+  
+    
+    .highlight {
+      color: #3a86ff;
+    }
+    
+    .profile-image {
+      border: 5px solid #dee2e6;
+    }
+    
+    .resume-button {
+      background-color: #3a86ff;
+      color: white;
+    }
+  }
+  
+  &.dark {
+   
+    
+    
+    .highlight {
+      color: #ffbe0b;
+    }
+    
+    .profile-image {
+      border: 5px solid #444;
+    }
+    
+    .resume-button {
+      background-color: #ffbe0b;
+      color: #121212;
+    }
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+    
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  
+  .profile-container {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 2rem;
+    
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+      margin-right: 3rem;
+    }
+  }
+  
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  .hero-text {
+    text-align: center;
+    
+    @media (min-width: 768px) {
+      text-align: left;
+      flex: 1;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      
+      @media (min-width: 768px) {
+        font-size: 3rem;
+      }
+      
+      &.highlight {
+        font-weight: 700;
+      }
+    }
+    
+    p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+  }
+  
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .about-text {
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+  }
+  
+  .cta-button {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .resume-button {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    
+    .icon {
+      font-size: 1.2rem;
+    }
+  }
+}
