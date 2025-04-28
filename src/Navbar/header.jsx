@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { FiGithub, FiSun, FiMoon, FiX } from 'react-icons/fi';
+import { FiGithub, FiSun, FiMoon } from 'react-icons/fi';
 import './Header.scss';
 
 const Header = () => {

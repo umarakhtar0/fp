@@ -33,10 +33,10 @@ const Hero = () => {
             <a href="https://www.facebook.com/profile.php?id=100077245312859" className="icon">
               <FaFacebook />
             </a>
-            <a href="#" className="icon">
+            <a href="https://www.twitter.com/" className="icon">
               <FaTwitter />
             </a>
-            <a href="#" className="icon">
+            <a href="https://www.instagram.com/" className="icon">
               <FaInstagram />
             </a>
             <a href="https://www.linkedin.com/in/umar-akhtar-2b6b28335/" className="icon">

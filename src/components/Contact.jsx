@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Button, Form, Input, message, Spin } from 'antd';
+import { Button, Form, Input, message} from 'antd';
 import { MailOutlined, UserOutlined, MessageOutlined, PhoneOutlined } from '@ant-design/icons';
 import { FaPaperPlane } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
@@ -114,7 +114,8 @@ const ContactPage = () => {
             name="phone"
             rules={[
               {
-                pattern: new RegExp(/^[0-9\-\+]{9,15}$/),
+                pattern: new RegExp(/^[0-9\-+]{9,15}$/),
+
                 message: 'Please enter a valid phone number!',
               },
             ]}

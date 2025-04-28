@@ -18,9 +18,10 @@ const HorizontalGallery = () => {
     const interval = setInterval(() => {
       setCurrentIndex(prev => (prev + 1) % images.length);
     }, 4000);
-
+  
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [images]);
+  
 
   // Handle scroll to current index
   useEffect(() => {
