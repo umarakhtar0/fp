@@ -20,7 +20,8 @@ const HorizontalGallery = () => {
     }, 4000);
   
     return () => clearInterval(interval);
-  }, [images]);
+  }, []);
+  
   
 
   // Handle scroll to current index
