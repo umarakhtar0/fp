@@ -2,6 +2,7 @@
 
 
 import React from "react";
+import { useState, useEffect } from 'react';
 
 import { motion } from "framer-motion";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
@@ -10,6 +11,45 @@ import './Hero.scss'
 // import './HeroSection.scss'
 
 const Hero = () => {
+  const roles = ['Web Developer', 'Graphic Designer'];
+  const [displayedRole, setDisplayedRole] = useState('');
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const [isTyping, setIsTyping] = useState(true);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    let timeout;
+    const currentRole = roles[currentRoleIndex];
+    
+    if (isTyping) {
+      // Typing animation
+      if (displayedRole.length < currentRole.length) {
+        timeout = setTimeout(() => {
+          setDisplayedRole(currentRole.substring(0, displayedRole.length + 1));
+        }, 100); // Typing speed
+      } else {
+        // Finished typing, pause then start deleting
+        timeout = setTimeout(() => {
+          setIsTyping(false);
+          setIsDeleting(true);
+        }, 1500); // Pause before deleting
+      }
+    } else if (isDeleting) {
+      // Deleting animation
+      if (displayedRole.length > 0) {
+        timeout = setTimeout(() => {
+          setDisplayedRole(displayedRole.substring(0, displayedRole.length - 1));
+        }, 50); // Deleting speed (faster than typing)
+      } else {
+        // Finished deleting, move to next role
+        setIsDeleting(false);
+        setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
+        setIsTyping(true);
+      }
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayedRole, currentRoleIndex, isTyping, isDeleting]);
   return (
     <section className="hero-section">
       <motion.div
@@ -20,10 +60,20 @@ const Hero = () => {
       >
         <div className="hero-text">
           <h1>Hello I'm A</h1>
-          <h2>
-            <span>Web </span>
-            <span className="highlight">Developer</span>
-          </h2>
+          <span className="highlight">
+              {displayedRole}
+              <motion.span 
+                animate={{ opacity: [0, 1, 0] }}
+                transition={{ 
+                  duration: 0.8,
+                  repeat: Infinity,
+                  repeatType: "loop"
+                }}
+                className="cursor"
+              >
+                |
+              </motion.span>
+            </span>
           <p>
           Hi, I’m Umar Akhtar, a passionate web developer based in Pakistan.
   {/* I specialize in HTML, CSS, JavaScript, React, Node.js, and more. */}

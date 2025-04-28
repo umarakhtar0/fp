@@ -11,11 +11,11 @@ const Footer = () => {
 
   const footerLinks = [
     { title: 'Home', url: '/' },
-    { title: 'About', url: '/about' },
-    { title: 'Services', url: '/services' },
-    { title: 'Portfolio', url: '/portfolio' },
-    { title: 'Blog', url: '/blog' },
-    { title: 'Contact', url: '/contact' },
+    { title: 'About', url: '#about' },
+    { title: 'Services', url: '#services' },
+    { title: 'Projects', url: '#projects' },
+    { title: 'Skills', url: '#myskills' },
+    { title: 'Contact', url: '#contact' },
   ];
 
   const socialLinks = [
@@ -116,9 +116,9 @@ const Footer = () => {
         >
           <p>&copy; {currentYear} Umar Akhtar. &copy; All rights reserved in 2025.</p>
           <div className="legal-links">
-            <a href="/privacy">Privacy Policy</a>
-            <a href="/terms">Terms of Service</a>
-            <a href="/cookies">Cookie Policy</a>
+            <a >Privacy Policy</a>
+            <a >Terms of Service</a>
+            <a >Cookie Policy</a>
           </div>
         </motion.div>
       </div>

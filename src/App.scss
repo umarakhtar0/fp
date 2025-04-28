@@ -1,96 +1,101 @@
-// .app-container {
-//   display: flex;
-//   flex-direction: column;
-//   min-height: 100vh;
+// // .app-container {
+// //   display: flex;
+// //   flex-direction: column;
+// //   min-height: 100vh;
   
-//   .main-content {
-//     flex: 1;
-//     padding: 2rem 0; // Adjust as needed
-//   }
-// }
+// //   .main-content {
+// //     flex: 1;
+// //     padding: 2rem 0; // Adjust as needed
+// //   }
+// // }
 
 
-// // Base styles
-// * {
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
+// // // Base styles
+// // * {
+// //   margin: 0;
+// //   padding: 0;
+// //   box-sizing: border-box;
   
-// }
+// // }
 
-// html {
-//   scroll-behavior: smooth;
-// }
+// // html {
+// //   scroll-behavior: smooth;
+// // }
 
-// * {
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-// }
+// // * {
+// //   margin: 0;
+// //   padding: 0;
+// //   box-sizing: border-box;
+// // }
 
-// html, body {
-//   overflow-x: hidden;  /* Prevent horizontal overflow */
-// }
+// // html, body {
+// //   overflow-x: hidden;  /* Prevent horizontal overflow */
+// // }
 
-// body {
-//   overflow-wrap: break-word; /* Helps in preventing overflow caused by long words */
-// }
+// // body {
+// //   overflow-wrap: break-word; /* Helps in preventing overflow caused by long words */
+// // }
 
 
 
-// //
-// /* Font Import from Google Fonts */
-// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;700&display=swap');
+// // //
+// // /* Font Import from Google Fonts */
+// // @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;700&display=swap');
 
-// body {
-//   font-family: 'Roboto', sans-serif;
-//   //background: radial-gradient(circle at 30% 50%, #1a1a2e, #16213e);
+// // body {
+// //   font-family: 'Roboto', sans-serif;
+// //   //background: radial-gradient(circle at 30% 50%, #1a1a2e, #16213e);
   
-//   .floating-circle {
-//     position: absolute;
-//     border-radius: 50%;
-//     background: rgba(255, 255, 255, 0.03);
-//     backdrop-filter: blur(5px);
+// //   .floating-circle {
+// //     position: absolute;
+// //     border-radius: 50%;
+// //     background: rgba(255, 255, 255, 0.03);
+// //     backdrop-filter: blur(5px);
     
-//     &.large {
-//       width: 500px;
-//       height: 500px;
-//       top: -150px;
-//       right: -150px;
-//     }
+// //     &.large {
+// //       width: 500px;
+// //       height: 500px;
+// //       top: -150px;
+// //       right: -150px;
+// //     }
     
-//     &.medium {
-//       width: 300px;
-//       height: 300px;
-//       bottom: -100px;
-//       left: -100px;
-//     }
+// //     &.medium {
+// //       width: 300px;
+// //       height: 300px;
+// //       bottom: -100px;
+// //       left: -100px;
+// //     }
     
-//     &.small {
-//       width: 150px;
-//       height: 150px;
-//       top: 30%;
-//       left: 20%;
-//     }
-//   }
-// }
+// //     &.small {
+// //       width: 150px;
+// //       height: 150px;
+// //       top: 30%;
+// //       left: 20%;
+// //     }
+// //   }
+// // }
 
-// h1, h2, h3 {
-//   font-family: 'Montserrat', sans-serif;
-//   font-weight: 700;
-// }
+// // h1, h2, h3 {
+// //   font-family: 'Montserrat', sans-serif;
+// //   font-weight: 700;
+// // }
 
-// p {
-//   font-family: 'Roboto', sans-serif;
-//   font-weight: 400;
-// }
-// //
-
-
+// // p {
+// //   font-family: 'Roboto', sans-serif;
+// //   font-weight: 400;
+// // }
+// // //
 
 
 
 
+
+
+html, body {
+  overflow-x: hidden;  /* Prevent horizontal overflow */
+  width: 100%;          /* Ensure the layout takes full width */
+  margin: 0;            /* Remove any default margin */
+}
 
 
 /* Base styles */
@@ -100,54 +105,9 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-html, body {
-  overflow-x: hidden;  /* Prevent horizontal overflow */
-}
-
-body {
-  overflow-wrap: break-word; /* Helps in preventing overflow caused by long words */
-}
-
-/* App Container to ensure proper layout */
-.app-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* Main Content area */
-.main-content {
-  flex: 1;
-  padding: 2rem 0; /* Adjust as needed */
-}
-
-/* Header Styles */
-header {
-  position: fixed;  /* Make the header fixed */
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;  /* Ensure it stays above other elements */
-  background: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
-  color: #fff;
-  padding: 1rem 2rem;
-  transition: background 0.3s ease;  /* Smooth transition for background change */
-}
 
 header.scrolled {
   background: rgba(0, 0, 0, 1);  /* Solid background when scrolled */
-}
-
-/* Footer Styles */
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 20px;
 }
 
 /* Font Import from Google Fonts */
@@ -175,12 +135,6 @@ p {
   backdrop-filter: blur(5px);
 }
 
-.floating-circle.large {
-  width: 500px;
-  height: 500px;
-  top: -150px;
-  right: -150px;
-}
 
 .floating-circle.medium {
   width: 300px;
@@ -194,11 +148,5 @@ p {
   height: 150px;
   top: 30%;
   left: 20%;
-}
-
-/* Make the header transparent initially */
-header {
-  background-color: transparent;
-  transition: background-color 0.3s ease-in-out;
 }
 

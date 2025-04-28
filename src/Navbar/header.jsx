@@ -24,9 +24,12 @@ const Header = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
-    { name: 'Projects', href: '#projects' },
+    { name: 'Service', href: '#services' },
     { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Projects', href: '#projects' },
+   
+    { name: 'Contact', href: '#contact' },
+   
   ];
 
   const toggleMenu = () => {
@@ -48,7 +51,7 @@ const Header = () => {
     <>
       <header className={`header ${scrolled ? 'scrolled' : ''}`}>
         <div className="header-container">
-          <a href="#home" className="logo" onClick={closeMenu}>
+          <a href="/" className="logo" onClick={closeMenu}>
             <span className="logo-text">UA</span>
             <span className="logo-circle"></span>
           </a>
