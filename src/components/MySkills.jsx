@@ -26,9 +26,7 @@ const SkillsExperience = () => {
     { name: 'Branding', level: 90 }
   ];
 
-  const experience = [
-   
-  ];
+
 
   return (
     <div className="skills-experience-container">

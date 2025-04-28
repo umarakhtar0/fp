@@ -136,13 +136,13 @@ function App() {
             
               <main className="main-content">
 
-      //           <section id="hero"><Hero /></section>
-      //           <section id="services"><Services/></section>
-      //           <section id="about"><About /></section>
-      //           <section id="skills"><Skills /></section>
-      //           <section id="projects"><Projects /></section>
-      //           <section id="graphicProjects"><  GraphicProjects/></section>
-      //           <section id="myskills">< MySkills/></section>
+                 <section id="hero"><Hero /></section>
+                 <section id="services"><Services/></section>
+                 <section id="about"><About /></section>
+                 <section id="skills"><Skills /></section>
+                 <section id="projects"><Projects /></section>
+                 <section id="graphicProjects"><  GraphicProjects/></section>
+                <section id="myskills">< MySkills/></section>
                 
                <section id="CompanyPage"> <CompanyPage /></section>
                
@@ -154,8 +154,7 @@ function App() {
             </div>
           </>
         } />
-        
-        {/* Catch-all route for 404 errors - shows only error page */}
+ 
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>

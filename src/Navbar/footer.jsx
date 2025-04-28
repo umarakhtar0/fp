@@ -36,7 +36,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* Top Section */}
+        
         <motion.div 
           className="footer-top"
           initial={{ opacity: 0, y: 20 }}
@@ -106,7 +106,7 @@ const Footer = () => {
           </div>
         </motion.div>
 
-        {/* Bottom Section */}
+       
         <motion.div 
           className="footer-bottom"
           initial={{ opacity: 0 }}

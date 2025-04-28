@@ -3,12 +3,11 @@
 
 import React from "react";
 import { useState, useEffect } from 'react';
-
 import { motion } from "framer-motion";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import profile from '../assets/profile.png';
 import './Hero.scss'
-// import './HeroSection.scss'
+
 
 const Hero = () => {
   const roles = ['Web Developer', 'Graphic Designer'];
@@ -18,6 +17,7 @@ const Hero = () => {
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
+   
     let timeout;
     const currentRole = roles[currentRoleIndex];
     
@@ -49,7 +49,7 @@ const Hero = () => {
     }
 
     return () => clearTimeout(timeout);
-  }, [displayedRole, currentRoleIndex, isTyping, isDeleting]);
+  }, [displayedRole, currentRoleIndex, isTyping, isDeleting,roles]);
   return (
     <section className="hero-section">
       <motion.div
@@ -76,7 +76,7 @@ const Hero = () => {
             </span>
           <p>
           Hi, I’m Umar Akhtar, a passionate web developer based in Pakistan.
-  {/* I specialize in HTML, CSS, JavaScript, React, Node.js, and more. */}
+  
   Welcome to my portfolio world!
           </p>
           <div className="social-icons">

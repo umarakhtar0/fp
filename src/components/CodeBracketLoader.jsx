@@ -1,32 +1,4 @@
-// import React, { useEffect, useState } from 'react';
-// import './CodeBracketLoader.scss';
 
-// const CodeBracketLoader = () => {
-//   const [isLoading, setIsLoading] = useState(true);
-
-//   useEffect(() => {
-//     // Simulate a loading process (e.g., fetching data)
-//     const timer = setTimeout(() => {
-//       setIsLoading(false);
-//     }, 3000); // Adjust the time as needed
-
-//     return () => clearTimeout(timer);
-//   }, []);
-
-//   return (
-//     isLoading && (
-//       <div className="loader-container">
-//         <div className="loader">
-//           <span className="angle">&lt;</span>
-//           <span className="angle">/</span>
-//           <span className="angle">&gt;</span>
-//         </div>
-//       </div>
-//     )
-//   );
-// };
-
-// export default CodeBracketLoader;
 
 
 import { motion } from "framer-motion";
