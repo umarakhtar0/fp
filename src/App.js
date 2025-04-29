@@ -105,6 +105,7 @@ import CompanyPage from './components/CompanyPage';
 import MySkills from './components/MySkills';
 import CodeBracketLoader from './components/CodeBracketLoader';
 import Error from './components/error';
+import CustomCursor from './context/CustomCursor';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -135,6 +136,7 @@ function App() {
               <Header />
             
               <main className="main-content">
+              <CustomCursor />
 
                  <section id="hero"><Hero /></section>
                  <section id="services"><Services/></section>

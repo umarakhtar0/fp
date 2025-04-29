@@ -75,9 +75,9 @@ const Hero = () => {
               </motion.span>
             </span>
           <p>
-          Hi, I’m Umar Akhtar, a passionate web developer based in Pakistan.
+          Hi, I’m Umar Akhtar, a passionate web developer & a graphic desginer.
   
-  Welcome to my portfolio world!
+  Welcome to my portfolio!
           </p>
           <div className="social-icons">
             <a href="https://www.facebook.com/profile.php?id=100077245312859" className="icon">
