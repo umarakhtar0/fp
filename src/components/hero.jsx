@@ -102,7 +102,8 @@ const Hero = () => {
         >
           <div className="image-circle">
             <img
-              src={profile}
+         src="https://res.cloudinary.com/dxx12rebk/image/upload/v1745923783/profile_cqqtou.png"
+
               alt="Profile"
               className="profile-pic"
             />

@@ -106,6 +106,7 @@ import MySkills from './components/MySkills';
 import CodeBracketLoader from './components/CodeBracketLoader';
 import Error from './components/error';
 import CustomCursor from './context/CustomCursor';
+import Protection from './components/Protection'; // Import the new component
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -128,6 +129,8 @@ function App() {
 
   return (
     <BrowserRouter>
+          <Protection /> 
+
       <Routes>
         <Route path="/" element={
           <>

@@ -133,3 +133,22 @@ $overlay-color: rgba(0, 0, 0, 0.6);
 .fade-in {
   animation: fadeIn $transition-speed ease-in;
 }
+
+// Short screen responsiveness (for smaller devices)
+@media (max-width: 768px) {
+  .gallery-item {
+    max-width: 300px; // Adjust width for small screens
+    aspect-ratio: 1; // Maintain square aspect ratio for images
+    height: auto; // Maintain aspect ratio
+    margin: 0 5px; // Reduce margins for smaller screens
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-item {
+    max-width: 200px; // Further reduce width for very small screens
+    aspect-ratio: 1; // Keep the aspect ratio consistent
+    height: auto;
+    margin: 0 5px; // Adjust margin further for smaller screens
+  }
+}

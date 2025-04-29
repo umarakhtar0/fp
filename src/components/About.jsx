@@ -41,7 +41,8 @@ const About = ({ darkMode }) => {
           >
             <div className="profile-image">
               <motion.img
-                src={profileImage}
+                       src="https://res.cloudinary.com/dxx12rebk/image/upload/v1745923783/profile_cqqtou.png"
+
                 alt="Profile"
                 initial={{ scale: 0 }}
                 animate={isInView ? { scale: 1 } : {}}

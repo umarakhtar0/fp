@@ -1,9 +1,49 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Gallery.scss';
 
-// Dynamically import all images from your folder
-const importAll = (r) => r.keys().map(r);
-const images = importAll(require.context('../assets/graphic', false, /\.(png|jpe?g|svg)$/));
+// Define the image URLs from Cloudinary directly
+const images = [
+  'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925192/Screenshot_2025-04-05_at_1.11.32_PM_ud0x6w.png',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925191/UNIVERSITY_OF_NORTHAMPTON_mrhdzf.png',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925188/PP_yw77mb.png',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925188/NEW_2_fibjvv.png',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925188/8_bed3mf.jpg',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925188/6_frqtrk.jpg',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925187/6_1_kwssqc.png',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925187/6_yfsooi.png',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925186/5_s9np7f.png',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925185/4_tmkgkh.png',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925184/3_cn8bvi.png',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925184/4_ibsddb.jpg',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925182/3_webngk.jpg',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925182/3_copy_c1waie.jpg',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925181/2_hrmtcf.png',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925181/3_copy_2_gfqrwn.jpg',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925179/2_n8vpvc.jpg',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925178/2_copy_zhoxtf.png',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925178/2_copy_iuzyck.jpg',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925178/2_2_hrllgl.png',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925178/2_2_u7tqtl.jpg',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925177/2_uccgdv.jpg',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925177/1_lkrsvf.png',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925176/1_ufggtm.jpg',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925177/2_4.16.04_PM_ptzcqp.jpg',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925176/1_vs6ban.jpg',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925176/1_copy_eppxt7.png',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925174/1_2_wottco.png',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925174/1_copy_2_udxelk.png',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925174/1_copy_dxdvo0.jpg',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925173/1_2_htefm6.jpg',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925173/1_copy_3_qd2uem.jpg',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925173/1_10_agp8y6.png',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925173/1_copy_2_zek4id.jpg',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925171/1_4_t1p6ju.png',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925171/1_7_jg6ubc.png',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925171/1_3_s1spqz.png',
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925171/1_2_v3ohmz.png',
+ 
+ 'https://res.cloudinary.com/dxx12rebk/image/upload/v1745925079/0_s2ubkl.jpg',
+];
 
 const HorizontalGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -22,8 +62,6 @@ const HorizontalGallery = () => {
     return () => clearInterval(interval);
   }, []);
   
-  
-
   // Handle scroll to current index
   useEffect(() => {
     if (galleryRef.current && containerRef.current) {
