@@ -44,7 +44,7 @@ const projects = [
     title: 'Weather Checker',
     // description: 'Browse our restaurant and experience exceptional dining with every visit!',
         image:'https://res.cloudinary.com/dxx12rebk/image/upload/v1745924597/4_h9lezx.png',
-    link: 'umar-weather-123.surge.sh',
+    link: 'https://umar-weather-123.surge.sh',
     languages: ['HTML', 'CSS', 'JavaScript']  // Add languages used
   },
   {
